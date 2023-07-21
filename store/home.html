@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>Redstore</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <link href="stylesheet1.css" rel="stylesheet" type="text/css">
+      <style>
+          .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+          }
+
+          .image-container .image-wrapper {
+            width: 30%;
+            margin: 10px;
+            position: relative;
+          }
+
+          .image-container .image-wrapper img {
+            width: 100%;
+          }
+
+          .image-container .image-wrapper .button {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: #fff;
+            color: #333;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+          }
+      </style>
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+       <div class="container-fluid">
+        <a href="home.html" class="navbar-brand"><img src="data:image/png;base64,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" height="50" width="100"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Redstorenav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="#Redstorenav">
+         <ul class="navbar-nav">
+          <li class="nav-item"><a href="home.html" class="nav-link"> Home </a></li>
+          <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" role="button"  data-bs-toggle="dropdown"> New & Featured  </a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">New For Men</a></li>
+              <li><a href="#" class="dropdown-item">New For Women</a></li>
+              <li><a href="#" class="dropdown-item">New For Kids</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link"> Men </a></li>
+          <li class="nav-item"><a href="#" class="nav-link"> Women </a></li>
+          <li class="nav-item"><a href="#" class="nav-link"> Kids </a></li>
+          <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" role="button"  data-bs-toggle="dropdown"> Sale </a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">Men's Sale</a></li>
+              <li><a href="#" class="dropdown-item">Women's Sale</a></li>
+              <li><a href="#" class="dropdown-item">Kids's Sale</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link"> SNKRS </a></li>
+          
+          <form class="d-flex">
+            <input type="text" value="" placeholder="Search...">
+            <button type="button" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            </button>
+          </form>
+          <li> </li>
+          <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+      </ul>
+      </div>
+     </div>
+    </nav>
+    <br><br>
+    <center>
+      <h1><i>Redstore</i></h1>
+      <h3><i>"Just Do It"</i></h3>
+    </center>
+    <br>
+
+    <div id="abc" class="carousel slide" data-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#abc" data-bs-slide-to="0" class="active"> </button>
+        <button type="button" data-bs-target="#abc" data-bs-slide-to="1"> </button>
+        <button type="button" data-bs-target="#abc" data-bs-slide-to="2" > </button>
+      </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://images.reebok.eu/19/72/77/57/19727757_44795117_2048.jpg?c=1"
+        class="d-block" style="height:2%; width:100%;"/>
+      </div>
+      <div class="carousel-item">
+        <img src="https://imagescdn.reebok.in/img/app/product/7/781619-9057946.jpg?auto=format&w=494.40000000000003"
+      class="d-block" style="height:2%;width:100%"/>
+      </div>
+      <div class="carousel-item">
+        <img src="data:image/jpeg;base64,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" 
+        class="d-block" style="height:2%;width:100%"/>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#abc" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"> </span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#abc" data-bs-slide="next">
+      <span class="carousel-control-next-icon"> </span>
+    </button>
+  </div><br><br>
+
+  <h4>&nbsp;&nbsp;Trending </h4><br>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <div class="card">
+          <img src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_578,c_limit/b7d2fcc9-89f9-4a52-ae69-fd320e8211d1/nike-just-do-it.png" class="card-img-top">
+            <div class="card-body">
+              <h6 class="card-title">Tatum 1 "Old School" PF</h6>
+              <p class="card-text">Dropping on App: 15 Jul</p>
+              <a href="#" class="btn btn-dark btn-md">Get it First</a>
+            </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card">
+          <img src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_578,c_limit/5b9649d2-e83d-4377-aee5-e06f4c6194e2/nike-just-do-it.png">
+            <div class="card-body">
+              <h6 class="card-title">A Nod to Varsity Style</h6>
+              <p class="card-text">Effortless Everyday Wear</p>
+              <a href="#" class="btn btn-dark btn-md">Shop</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+
+  <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Essentials</h4><br>
+  <div class="image-container">
+    <div class="image-wrapper">
+      <img src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_540,c_limit/69ded6b2-4b32-4f76-9dd0-2d5235a04953/nike-just-do-it.png" alt="Image 1">
+      <button class="button">Men's</button>
+    </div>
+    <div class="image-wrapper">
+      <img src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_540,c_limit/1c8b3b45-5c46-418e-8c62-37fc65eca37c/nike-just-do-it.png" alt="Image 2">
+      <button class="button">Women's</button>
+    </div>
+    <div class="image-wrapper">
+      <img src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_540,c_limit/70a7b831-bc34-4273-9790-6775c56667c0/nike-just-do-it.png" alt="Image 3">
+      <button class="button">Kid's</button>
+    </div>
+  </div>
+
+  <br><br>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Our Mission</h3>
+          <p>BRING INSPIRATION AND INNOVATION TO EVERY ATHLETE* IN THE WORLD<br><br>
+          <i>*If you have a body, you are an athlete</i></p>
+        </div>
+        <div class="col-md-3">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">New & Featured</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>Follow Us</h3>
+          <ul class="social-icons">
+            <li><a href=""><i class="fa fa-facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+            </svg></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+            </svg></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+            </svg></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+            </svg></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="footer-bottom">
+            <p>&copy; 2023 Redstore. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+</div>
+</body>
+</html>
